@@ -58,6 +58,9 @@ export default function CoursesTable({ courses, setCourses }) {
             </Th>
           </Tr>
         </Thead>
+
+
+
         <Tbody>
           {courses?.length === 0 ? (
             <Tr>
@@ -78,10 +81,14 @@ export default function CoursesTable({ courses, setCourses }) {
                     alt={course?.courseName}
                     className="h-[148px] w-[220px] rounded-lg object-cover"
                   />
+
+
                   <div className="flex flex-col justify-between">
+
                     <p className="text-lg font-semibold text-richblack-5">
                       {course.courseName}
                     </p>
+
                     <p className="text-xs text-richblack-300">
                       {course.courseDescription.split(" ").length >
                       TRUNCATE_LENGTH
@@ -91,9 +98,11 @@ export default function CoursesTable({ courses, setCourses }) {
                             .join(" ") + "..."
                         : course.courseDescription}
                     </p>
+
                     <p className="text-[12px] text-white">
                       Created: {formatDate(course.createdAt)}
                     </p>
+
                     {course.status === COURSE_STATUS.DRAFT ? (
                       <p className="flex w-fit flex-row items-center gap-2 rounded-full bg-richblack-700 px-2 py-[2px] text-[12px] font-medium text-pink-100">
                         <HiClock size={14} />
@@ -109,12 +118,18 @@ export default function CoursesTable({ courses, setCourses }) {
                     )}
                   </div>
                 </Td>
+
+
                 <Td className="text-sm font-medium text-richblack-100">
-                  2hr 30min
+                  1hr 20min
                 </Td>
+
+
                 <Td className="text-sm font-medium text-richblack-100">
                   ₹{course.price}
                 </Td>
+
+                
                 <Td className="text-sm font-medium text-richblack-100 ">
                   <button
                     disabled={loading}

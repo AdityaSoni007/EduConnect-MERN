@@ -288,6 +288,7 @@ export const fetchInstructorCourses = async (token) => {
 // delete a course
 export const deleteCourse = async (data, token) => {
   const toastId = toast.loading("Loading...")
+  console.log("HELLO");
   try {
     const response = await apiConnector("DELETE", DELETE_COURSE_API, data, {
       Authorization: `Bearer ${token}`,

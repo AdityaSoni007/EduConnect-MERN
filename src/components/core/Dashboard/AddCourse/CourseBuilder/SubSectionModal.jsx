@@ -78,6 +78,9 @@ export default function SubSectionModal({
     }
     setLoading(true)
     const result = await updateSubSection(formData, token)
+
+
+
     if (result) {
       // console.log("result", result)
       // update the structure of course
@@ -125,15 +128,20 @@ export default function SubSectionModal({
 
   return (
     <div className="fixed inset-0 z-[1000] !mt-0 grid h-screen w-screen place-items-center overflow-auto bg-white bg-opacity-10 backdrop-blur-sm">
+
+
       <div className="my-10 w-11/12 max-w-[700px] rounded-lg border border-richblack-400 bg-richblack-800">
         {/* Modal Header */}
         <div className="flex items-center justify-between rounded-t-lg bg-richblack-700 p-5">
+
           <p className="text-xl font-semibold text-richblack-5">
             {view && "Viewing"} {add && "Adding"} {edit && "Editing"} Lecture
           </p>
+
           <button onClick={() => (!loading ? setModalData(null) : {})}>
             <RxCross2 className="text-2xl text-richblack-5" />
           </button>
+
         </div>
         {/* Modal Form */}
         <form
@@ -151,6 +159,8 @@ export default function SubSectionModal({
             viewData={view ? modalData.videoUrl : null}
             editData={edit ? modalData.videoUrl : null}
           />
+
+
           {/* Lecture Title */}
           <div className="flex flex-col space-y-2">
             <label className="text-sm text-richblack-5" htmlFor="lectureTitle">
@@ -169,6 +179,9 @@ export default function SubSectionModal({
               </span>
             )}
           </div>
+
+
+          
           {/* Lecture Description */}
           <div className="flex flex-col space-y-2">
             <label className="text-sm text-richblack-5" htmlFor="lectureDesc">

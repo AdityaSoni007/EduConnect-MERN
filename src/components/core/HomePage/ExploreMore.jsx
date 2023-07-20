@@ -6,7 +6,7 @@ import HighlightText from "./HighlightText";
 const tabsName = [
   "Free",
   "New to coding",
-  "Most popular",
+  // "Most popular",
   "Skills paths",
   "Career paths",
 ];

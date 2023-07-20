@@ -59,9 +59,11 @@ export default function Upload({
 
   return (
     <div className="flex flex-col space-y-2">
+
       <label className="text-sm text-richblack-5" htmlFor={name}>
         {label} {!viewData && <sup className="text-pink-200">*</sup>}
       </label>
+      
       <div
         className={`${
           isDragActive ? "bg-richblack-600" : "bg-richblack-700"
@@ -113,6 +115,9 @@ export default function Upload({
           </div>
         )}
       </div>
+
+
+      
       {errors[name] && (
         <span className="ml-2 text-xs tracking-wide text-pink-200">
           {label} is required

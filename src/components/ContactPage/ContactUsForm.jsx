@@ -103,10 +103,7 @@ const ContactUsForm = () => {
         <label htmlFor="phonenumber" className="lable-style">
           Phone Number
         </label>
-
-        <div className="flex gap-5">
-          
-          <div className="flex w-[calc(100%-90px)] flex-col gap-2">
+        <div className="flex w-[calc(100%-90px)] flex-col gap-2">
             <input
               type="number"
               name="phonenumber"
@@ -123,12 +120,14 @@ const ContactUsForm = () => {
               })}
             />
           </div>
-        </div>
+        
         {errors.phoneNo && (
           <span className="-mt-1 text-[12px] text-yellow-100">
             {errors.phoneNo.message}
           </span>
         )}
+
+
       </div>
 
       <div className="flex flex-col gap-2">

@@ -41,9 +41,11 @@ export default function RequirementsField({
 
   return (
     <div className="flex flex-col space-y-2">
+      
       <label className="text-sm text-richblack-5" htmlFor={name}>
         {label} <sup className="text-pink-200">*</sup>
       </label>
+
       <div className="flex flex-col items-start space-y-2">
         <input
           type="text"

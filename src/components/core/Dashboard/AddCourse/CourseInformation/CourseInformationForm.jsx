@@ -5,16 +5,12 @@ import { HiOutlineCurrencyRupee } from "react-icons/hi"
 import { MdNavigateNext } from "react-icons/md"
 import { useDispatch, useSelector } from "react-redux"
 
-import {
-  addCourseDetails,
-  editCourseDetails,
-  fetchCourseCategories,
-} from "../../../../../services/operations/courseDetailsAPI"
+import {addCourseDetails,editCourseDetails,fetchCourseCategories} from "../../../../../services/operations/courseDetailsAPI"
 import { setCourse, setStep } from "../../../../../slices/courseSlice"
 import { COURSE_STATUS } from "../../../../../utils/constants"
 import IconBtn from "../../../../common/IconBtn"
 import Upload from "../Upload"
-import ChipInput from "./ChipInput"
+// import ChipInput from "./ChipInput"
 import RequirementsField from "./RequirementField"
 
 export default function CourseInformationForm() {
@@ -37,7 +33,7 @@ export default function CourseInformationForm() {
       setLoading(true)
       const categories = await fetchCourseCategories()
       if (categories.length > 0) {
-        // console.log("categories", categories)
+        console.log("categories", categories)
         setCourseCategories(categories)
       }
       setLoading(false)
@@ -48,7 +44,7 @@ export default function CourseInformationForm() {
       setValue("courseTitle", course.courseName)
       setValue("courseShortDesc", course.courseDescription)
       setValue("coursePrice", course.price)
-      setValue("courseTags", course.tag)
+      // setValue("courseTags", course.tag)
       setValue("courseBenefits", course.whatYouWillLearn)
       setValue("courseCategory", course.category)
       setValue("courseRequirements", course.instructions)
@@ -66,11 +62,11 @@ export default function CourseInformationForm() {
       currentValues.courseTitle !== course.courseName ||
       currentValues.courseShortDesc !== course.courseDescription ||
       currentValues.coursePrice !== course.price ||
-      currentValues.courseTags.toString() !== course.tag.toString() ||
+      // currentValues.courseTags.toString() !== course.tag.toString() ||
       currentValues.courseBenefits !== course.whatYouWillLearn ||
       currentValues.courseCategory._id !== course.category._id ||
       currentValues.courseRequirements.toString() !==
-        course.instructions.toString() ||
+      course.instructions.toString() ||
       currentValues.courseImage !== course.thumbnail
     ) {
       return true
@@ -101,9 +97,9 @@ export default function CourseInformationForm() {
         if (currentValues.coursePrice !== course.price) {
           formData.append("price", data.coursePrice)
         }
-        if (currentValues.courseTags.toString() !== course.tag.toString()) {
-          formData.append("tag", JSON.stringify(data.courseTags))
-        }
+        // if (currentValues.courseTags.toString() !== course.tag.toString()) {
+        //   formData.append("tag", JSON.stringify(data.courseTags))
+        // }
         if (currentValues.courseBenefits !== course.whatYouWillLearn) {
           formData.append("whatYouWillLearn", data.courseBenefits)
         }
@@ -140,7 +136,7 @@ export default function CourseInformationForm() {
     formData.append("courseName", data.courseTitle)
     formData.append("courseDescription", data.courseShortDesc)
     formData.append("price", data.coursePrice)
-    formData.append("tag", JSON.stringify(data.courseTags))
+    // formData.append("tag", JSON.stringify(data.courseTags))
     formData.append("whatYouWillLearn", data.courseBenefits)
     formData.append("category", data.courseCategory)
     formData.append("status", COURSE_STATUS.DRAFT)
@@ -177,6 +173,13 @@ export default function CourseInformationForm() {
           </span>
         )}
       </div>
+
+
+
+
+
+
+
       {/* Course Short Description */}
       <div className="flex flex-col space-y-2">
         <label className="text-sm text-richblack-5" htmlFor="courseShortDesc">
@@ -186,7 +189,7 @@ export default function CourseInformationForm() {
           id="courseShortDesc"
           placeholder="Enter Description"
           {...register("courseShortDesc", { required: true })}
-          className="form-style resize-x-none min-h-[130px] w-full"
+          className="form-style  min-h-[130px] w-full"
         />
         {errors.courseShortDesc && (
           <span className="ml-2 text-xs tracking-wide text-pink-200">
@@ -194,6 +197,11 @@ export default function CourseInformationForm() {
           </span>
         )}
       </div>
+
+
+
+
+
       {/* Course Price */}
       <div className="flex flex-col space-y-2">
         <label className="text-sm text-richblack-5" htmlFor="coursePrice">
@@ -220,6 +228,12 @@ export default function CourseInformationForm() {
           </span>
         )}
       </div>
+
+
+
+
+
+
       {/* Course Category */}
       <div className="flex flex-col space-y-2">
         <label className="text-sm text-richblack-5" htmlFor="courseCategory">
@@ -247,8 +261,13 @@ export default function CourseInformationForm() {
           </span>
         )}
       </div>
+
+
+
+
+
       {/* Course Tags */}
-      <ChipInput
+      {/* <ChipInput
         label="Tags"
         name="courseTags"
         placeholder="Enter Tags and press Enter"
@@ -256,7 +275,14 @@ export default function CourseInformationForm() {
         errors={errors}
         setValue={setValue}
         getValues={getValues}
-      />
+      /> */}
+
+
+
+
+
+
+
       {/* Course Thumbnail Image */}
       <Upload
         name="courseImage"
@@ -266,6 +292,14 @@ export default function CourseInformationForm() {
         errors={errors}
         editData={editCourse ? course?.thumbnail : null}
       />
+
+
+
+
+
+
+
+
       {/* Benefits of the course */}
       <div className="flex flex-col space-y-2">
         <label className="text-sm text-richblack-5" htmlFor="courseBenefits">
@@ -283,6 +317,10 @@ export default function CourseInformationForm() {
           </span>
         )}
       </div>
+
+
+
+
       {/* Requirements/Instructions */}
       <RequirementsField
         name="courseRequirements"
@@ -292,6 +330,10 @@ export default function CourseInformationForm() {
         errors={errors}
         getValues={getValues}
       />
+
+
+
+      
       {/* Next Button */}
       <div className="flex justify-end gap-x-2">
         {editCourse && (
@@ -300,7 +342,7 @@ export default function CourseInformationForm() {
             disabled={loading}
             className={`flex cursor-pointer items-center gap-x-2 rounded-md bg-richblack-300 py-[8px] px-[20px] font-semibold text-richblack-900`}
           >
-            Continue Wihout Saving
+            Continue Without Saving
           </button>
         )}
         <IconBtn

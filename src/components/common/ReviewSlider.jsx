@@ -36,8 +36,8 @@ function ReviewSlider() {
   // console.log(reviews)
 
   return (
-    <div className="text-white">
-      <div className="my-[50px] h-[184px] max-w-maxContentTab lg:max-w-maxContent w-[90vw]">
+    <div className="text-white relative">
+      <div className="my-[50px] h-[184px] max-w-maxContentTab lg:max-w-maxContent w-[95vw]">
         <Swiper
           slidesPerView={4}
           spaceBetween={25}

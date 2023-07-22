@@ -168,6 +168,7 @@ const enrollStudents = async (courses, userId, res) => {
         userId: userId,
         completedVideos: [],
       })
+      
       // Find the student and add the course to their list of enrolled courses
       const enrolledStudent = await User.findByIdAndUpdate(
         userId,

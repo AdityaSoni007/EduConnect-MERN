@@ -130,8 +130,6 @@ export function logout(navigate) {
   }
 }
 
-
-
 export function getPasswordResetToken(email , setEmailSent) {
   return async(dispatch) => {
     dispatch(setLoading(true));

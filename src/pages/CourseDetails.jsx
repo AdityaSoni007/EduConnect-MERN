@@ -186,7 +186,7 @@ function CourseDetails() {
 
 
           {/* Courses Card */}
-          <div className="right-[1rem] top-[60px] mx-auto hidden min-h-[600px] w-1/3 max-w-[410px] translate-y-24 md:translate-y-0 lg:absolute  lg:block">
+          <div className="right-[1rem] top-[60px] mx-auto hidden min-h-[600px] w-1/3 max-w-[410px] translate-y-24 md:translate-y-0 lg:absolute  lg:block transition-all duration-500 hover:scale-105">
             <CourseDetailsCard
               course={response?.data?.courseDetails}
               setConfirmationModal={setConfirmationModal}
@@ -198,7 +198,14 @@ function CourseDetails() {
 
         </div>
       </div>
+
+
+
+
+
+
       <div className="mx-auto box-content px-4 text-start text-richblack-5 lg:w-[1260px]">
+        
         <div className="mx-auto max-w-maxContentTab lg:mx-0 xl:max-w-[810px]">
           {/* What will you learn section */}
           <div className="my-8 border border-richblack-600 p-8">

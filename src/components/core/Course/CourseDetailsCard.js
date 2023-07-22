@@ -83,13 +83,13 @@ function CourseDetailsCard({ course, setConfirmationModal, handleBuyCourse }) {
               </button>
             )}
           </div>
-          <div>
+          {/* <div>
             <p className="pb-3 pt-6 text-center text-sm text-richblack-25">
               30-Day Money-Back Guarantee
             </p>
-          </div>
+          </div> */}
 
-          <div className={``}>
+          {/* <div className={``}>
             <p className={`my-2 text-xl font-semibold `}>
               This Course Includes :
             </p>
@@ -103,7 +103,8 @@ function CourseDetailsCard({ course, setConfirmationModal, handleBuyCourse }) {
                 )
               })}
             </div>
-          </div>
+          </div> */}
+
           <div className="text-center">
             <button
               className="mx-auto flex items-center gap-2 py-6 text-yellow-100 "

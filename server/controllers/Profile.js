@@ -7,6 +7,9 @@ const { uploadImageToCloudinary } = require("../utils/imageUploader")
 const mongoose = require("mongoose")
 const { convertSecondsToDuration } = require("../utils/secToDuration")
 // Method for updating a profile
+
+
+
 exports.updateProfile = async (req, res) => {
   try {
     const {
@@ -17,6 +20,7 @@ exports.updateProfile = async (req, res) => {
       contactNumber = "",
       gender = "",
     } = req.body
+
     const id = req.user.id
 
     // Find the profile by id
@@ -72,6 +76,8 @@ exports.deleteAccount = async (req, res) => {
     await Profile.findByIdAndDelete({
       _id: new mongoose.Types.ObjectId(user.additionalDetails),
     })
+
+    
     for (const courseId of user.courses) {
       await Course.findByIdAndUpdate(
         courseId,

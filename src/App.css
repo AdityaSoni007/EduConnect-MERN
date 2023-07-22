@@ -5,6 +5,7 @@
 html,
 body {
   overflow-x: hidden;
+  
 }
 
 /* ===== Scrollbar CSS ===== */
@@ -249,4 +250,23 @@ details > summary::-webkit-details-marker {
 }
 .section_heading {
   @apply text-2xl font-bold text-richblack-5 lg:text-4xl;
+}
+
+@media screen and (max-width: 640px) {
+  .respo{
+    
+    margin-bottom: 20px;
+  }
+  
+  .respo img{
+    width: 12vw;
+  }
+}
+
+
+@media screen and (max-width: 514px) {
+  #personal-details{
+    display: flex;
+    flex-direction: column;
+  }
 }

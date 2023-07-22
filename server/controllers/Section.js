@@ -1,6 +1,10 @@
 const Section = require("../models/Section");
 const Course = require("../models/Course");
 const SubSection = require("../models/SubSection");
+
+
+
+
 // CREATE a new section
 exports.createSection = async (req, res) => {
 	try {
@@ -110,7 +114,8 @@ exports.deleteSection = async (req, res) => {
 		await Section.findByIdAndDelete(sectionId);
 
 		//find the updated course and return 
-		const course = await Course.findById(courseId).populate({
+		const course = await Course.findById(courseId)
+		.populate({
 			path:"courseContent",
 			populate: {
 				path: "subSection"

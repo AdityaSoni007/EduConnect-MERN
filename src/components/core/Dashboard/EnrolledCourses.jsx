@@ -39,21 +39,21 @@ export default function EnrolledCourses() {
       ) : (
         <div className="my-8 text-richblack-5">
           {/* Headings */}
-          <div className="flex rounded-t-lg bg-richblack-500 ">
+          <div className="flex rounded-t-lg bg-richblack-500 justify-between">
             <p className="w-[45%] px-5 py-3">Course Name</p>
             <p className="w-1/4 px-2 py-3">Duration</p>
-            <p className="flex-1 px-2 py-3">Progress</p>
+            {/* <p className="flex-1 px-2 py-3">Progress</p> */}
           </div>
           {/* Course Names */}
           {enrolledCourses.map((course, i, arr) => (
             <div
-              className={`flex items-center border border-richblack-700 ${
+              className={`flex items-center border justify-between border-richblack-700 ${
                 i === arr.length - 1 ? "rounded-b-lg" : "rounded-none"
               }`}
               key={i}
             >
               <div
-                className="flex w-[45%] cursor-pointer items-center gap-4 px-5 py-3"
+                className="flex w-[45%] cursor-pointer items-center  gap-4 px-5 py-3"
                 onClick={() => {
                   navigate(
                     `/view-course/${course?._id}/section/${course.courseContent?.[0]?._id}/sub-section/${course.courseContent?.[0]?.subSection?.[0]?._id}`
@@ -75,14 +75,14 @@ export default function EnrolledCourses() {
                 </div>
               </div>
               <div className="w-1/4 px-2 py-3">{course?.totalDuration}</div>
-              <div className="flex w-1/5 flex-col gap-2 px-2 py-3">
+              {/* <div className="flex w-1/5 flex-col gap-2 px-2 py-3">
                 <p>Progress: {course.progressPercentage || 0}%</p>
                 <ProgressBar
                   completed={course.progressPercentage || 0}
                   height="8px"
                   isLabelVisible={false}
                 />
-              </div>
+              </div> */}
             </div>
           ))}
         </div>

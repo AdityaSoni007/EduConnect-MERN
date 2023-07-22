@@ -131,14 +131,14 @@ function Navbar() {
             {/* signup and login */}
             {token === null && (
               <Link to="/login">
-                <button className="rounded-[8px] border border-richblack-700 bg-richblack-800 px-[12px] py-[8px] text-richblack-100">
+                <button className="rounded-[8px] border border-richblack-700 bg-richblack-800 px-[12px] py-[8px] text-richblack-100 transition-all duration-200 hover:scale-95">
                   Log in
                 </button>
               </Link>
             )}
             {token === null && (
               <Link to="/signup">
-                <button className="rounded-[8px] border border-richblack-700 bg-richblack-800 px-[12px] py-[8px] text-richblack-100">
+                <button className="rounded-[8px] border border-richblack-700 bg-richblack-800 px-[12px] py-[8px] text-richblack-100 transition-all duration-200 hover:scale-95">
                   Sign up
                 </button>
               </Link>
@@ -162,10 +162,10 @@ function Navbar() {
       </div>
 
       {burger && (
-        <div className=" p-8 md:hidden block  h-auto border-b-[1px] border-b-richblack-700">
-          <ul className="flex flex-col items-center justify-center gap-x-6 text-richblack-25">
+        <div className=" p-8 md:hidden block  h-auto border-b-[1px] border-b-richblack-700  ">
+          <ul className="flex flex-col items-center justify-center text-richblack-25 ">
             {NavbarLinks.map((link, index) => (
-              <li key={index} className="px-[18px] py-[10px]">
+              <li key={index} className="px-[18px] py-[10px] transition-all duration-200 hover:scale-110 ">
                 {link.title === "Catalog" ? (
                   <>
                     <div
@@ -213,7 +213,7 @@ function Navbar() {
           <div className=" flex flex-col items-center gap-x-4 ">
 
             {token !== null && (<Link to="dashboard/my-profile" onClick={()=>(setBurger(false))}>
-                <button className="rounded-[8px]  px-[12px] py-[8px] text-richblack-25">
+                <button className="rounded-[8px]  px-[12px] py-[8px] text-richblack-25 transition-all duration-200 hover:scale-110">
                   Dashboard
                 </button>
               </Link>) }
@@ -221,14 +221,14 @@ function Navbar() {
             {/* signup and login */}
             {token === null && (
               <Link to="/login" onClick={()=>(setBurger(false))}>
-                <button className="rounded-[8px]  px-[12px] py-[8px] text-richblack-25">
+                <button className="rounded-[8px]  px-[12px] py-[8px] text-richblack-25 transition-all duration-200 hover:scale-110">
                   Log in
                 </button>
               </Link>
             )}
             {token === null && (
               <Link to="/signup" onClick={()=>(setBurger(false))}>
-                <button className="rounded-[8px]   px-[12px] py-[8px] text-richblack-25">
+                <button className="rounded-[8px]   px-[12px] py-[8px] text-richblack-25 transition-all duration-200 hover:scale-110">
                   Sign up
                 </button>
               </Link>

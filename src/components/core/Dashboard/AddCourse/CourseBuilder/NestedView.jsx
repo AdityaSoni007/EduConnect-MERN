@@ -148,7 +148,7 @@ export default function NestedView({ handleChangeEditSectionName }) {
                           btn1Text: "Delete",
                           btn2Text: "Cancel",
                           btn1Handler: () =>
-                            handleDeleteSubSection(data._id, section._id),
+                          handleDeleteSubSection(data._id, section._id),
                           btn2Handler: () => setConfirmationModal(null),
                         })
                       }

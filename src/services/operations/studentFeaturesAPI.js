@@ -54,7 +54,7 @@ export async function buyCourse(token, courses, userDetails, navigate, dispatch)
             order_id:orderResponse.data.data.id,
             name:"EduConnect",
             description: "Thank You for Purchasing the Course",
-            image:rzpLogo,
+            // image:rzpLogo,
             prefill: {
                 name:`${userDetails.firstName}`,
                 email:userDetails.email
@@ -109,7 +109,7 @@ async function verifyPayment(bodyData, token, navigate, dispatch) {
         if(!response.data.success) {
             throw new Error(response.data.message);
         }
-        toast.success("payment Successful, ypou are addded to the course");
+        toast.success("payment Successful, you are added to the course");
         navigate("/dashboard/enrolled-courses");
         dispatch(resetCart());
     }   

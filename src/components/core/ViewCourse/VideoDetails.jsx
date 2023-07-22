@@ -28,9 +28,12 @@ const VideoDetails = () => {
   useEffect(() => {
     ;(async () => {
       if (!courseSectionData.length) return
+      
       if (!courseId && !sectionId && !subSectionId) {
         navigate(`/dashboard/enrolled-courses`)
-      } else {
+      } 
+      
+      else {
         // console.log("courseSectionData", courseSectionData)
         const filteredData = courseSectionData.filter(
           (course) => course._id === sectionId
@@ -82,14 +85,12 @@ const VideoDetails = () => {
     // console.log("no of subsections", noOfSubsections)
 
     if (currentSubSectionIndx !== noOfSubsections - 1) {
-      const nextSubSectionId =
-        courseSectionData[currentSectionIndx].subSection[
-          currentSubSectionIndx + 1
-        ]._id
+      const nextSubSectionId = courseSectionData[currentSectionIndx].subSection[currentSubSectionIndx + 1]._id
       navigate(
         `/view-course/${courseId}/section/${sectionId}/sub-section/${nextSubSectionId}`
       )
-    } else {
+    } 
+    else {
       const nextSectionId = courseSectionData[currentSectionIndx + 1]._id
       const nextSubSectionId =
         courseSectionData[currentSectionIndx + 1].subSection[0]._id

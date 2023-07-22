@@ -11,7 +11,7 @@ const Contact = () => {
       <div className="mx-auto mt-20 mb-20 flex w-11/12 max-w-maxContent flex-col justify-between gap-10 text-white lg:flex-row">
 
         {/* Contact Details */}
-        <div className="lg:w-[40%]">
+        <div className="lg:w-[40%]  transition-all duration-500 hover:scale-105">
           <ContactDetails />
         </div>
 

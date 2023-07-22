@@ -23,7 +23,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
 	cors({
-		origin:"https://educonnect-frontend.netlify.app/",
+		origin:"https://educonnect-frontend.netlify.app",
 		credentials:true,
 	})
 )

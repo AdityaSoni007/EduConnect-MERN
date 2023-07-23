@@ -1,5 +1,6 @@
 const { Mongoose } = require("mongoose");
 const Category = require("../models/Category");
+
 function getRandomInt(max) {
     return Math.floor(Math.random() * max)
   }
@@ -78,26 +79,13 @@ exports.categoryPageDetails = async (req, res) => {
       }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
   
       // Get courses for other categories
       const categoriesExceptSelected = await Category.find({
         _id: { $ne: categoryId },
       })
       let differentCategory = await Category.findOne(
-        categoriesExceptSelected[getRandomInt(categoriesExceptSelected.length)]
-          ._id
+        categoriesExceptSelected[getRandomInt(categoriesExceptSelected.length)]._id
       )
         .populate({
           path: "courses",

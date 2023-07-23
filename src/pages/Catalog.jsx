@@ -82,6 +82,7 @@ const Catalog = () => {
           {/* Section 1 */}
           <div className=" mx-auto box-content w-full max-w-maxContentTab px-4 py-12 lg:max-w-maxContent">
             <div className="section_heading mb-10">Courses to Launch Your <span className='text-yellow-25'>{catalogPageData?.data?.selectedCategory?.name}</span> Journey</div>
+
             {/* <div className="my-4 flex border-b border-b-richblack-600 text-sm">
               <p
                 className={`px-4 py-2 ${
@@ -104,6 +105,7 @@ const Catalog = () => {
                 New
               </p>
             </div> */}
+            
             <div className=' p-2'>
               <CourseSlider
                 Courses={catalogPageData?.data?.selectedCategory?.courses}
